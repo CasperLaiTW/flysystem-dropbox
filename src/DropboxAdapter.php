@@ -287,7 +287,7 @@ class DropboxAdapter extends AbstractAdapter
      */
     public function getUrl($path)
     {
-        return $this->client->createShareableLink($path);
+        return $this->client->createShareableLink($this->applyPathPrefix($path));
     }
 
     /**
