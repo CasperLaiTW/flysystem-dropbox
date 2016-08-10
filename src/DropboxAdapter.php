@@ -280,6 +280,17 @@ class DropboxAdapter extends AbstractAdapter
     }
 
     /**
+     * Get the URL for the file at the given path.
+     *
+     * @param  string  $path
+     * @return string
+     */
+    public function getUrl($path)
+    {
+        return $this->client->createShareableLink($path);
+    }
+
+    /**
      * Do the actual upload of a string file.
      *
      * @param string    $path
